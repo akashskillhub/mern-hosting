@@ -3,7 +3,8 @@ const cors = require("cors")
 const mongoose = require("mongoose")
 require("dotenv").config()
 const app = express()
-app.use(cors({ origin: "http://localhost:5173" }))
+app.use(express.static("dist"))
+app.use(cors({ origin: "https://mern-hosting.onrender.com" }))
 
 app.use(express.json()) // 👈 body parser
 app.use("/api/notes", require("./routes/todo.routes"))
